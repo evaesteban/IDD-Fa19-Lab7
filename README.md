@@ -1,16 +1,12 @@
 # Video Doorbell, Lab 7
 
-*A lab report by John Q. Student*
-
-### In This Report
-
-1. Upload a video of your version of the camera lab to your lab Github repository
-1. As usual, update your class Hub repository to add your [forked IDD-Fa18-Lab7](/FAR-Lab/IDD-Fa18-Lab7) repository.
-1. Answer the questions in-line below on your README.md.
+*A lab report by Eva Pilar Esteban Velasco*
 
 ## Part A. HelloYou from the Raspberry Pi
 
 **a. Link to a video of your HelloYou sketch running.**
+
+[Link to HelloYou Video](helloYouVideo_Muted.mp4)
 
 ## Part B. Web Camera
 
