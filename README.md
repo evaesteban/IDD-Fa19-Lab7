@@ -12,7 +12,11 @@
 
 **a. Compare `helloYou/server.js` and `IDD-Fa18-Lab7/pictureServer.js`. What elements had to be added or changed to enable the web camera? (Hint: It might be good to know that there is a UNIX command called `diff` that compares files.)**
 
+The variables that pictureServer.js and server.js have in common are initialized as general variables in pictureServer.js, whereas in server.js they are initialized as constants. The variable NodeWebcam only appears in pictureServer.js, and it allows the webcam functionality. There is a default webcam setup section, which includes a few options – stored in the structure opts - to define how the webcam is operated. The variable NodeWebcam is initialized according to these options. The pictureServer.js code also includes a function at the end to take a picture when the user presses the ‘Take a picture’ button. 
+
 **b. Include a video of your working video doorbell**
+
+
 
 ## Part C. Make it your own
 
