@@ -26,4 +26,4 @@ First, I tried the 'email' library because my idea was to notify someone via ema
 
 **b. Upload a video of your working modified project**
 
-[Link to Cat Gif Doorbell](CatGit_Muted.mp4)
+[Link to Cat Gif Doorbell](CatGifs_Muted.mp4)
