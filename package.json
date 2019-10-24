@@ -17,9 +17,16 @@
   },
   "homepage": "https://github.com/FAR-Lab/distant-pictures#readme",
   "dependencies": {
+    "animals-api": "^1.0.5",
+    "app-notify": "^2.2.2",
     "express": "^4.16.2",
+    "image-downloader": "^3.5.0",
+    "node-webcam": "^0.4.3",
+    "random-animals-api": "^1.2.0",
+    "random-picture": "^3.1.1",
+    "save-image": "0.0.3",
     "serialport": "^6.0.4",
     "socket.io": "^2.0.4",
-    "node-webcam": "^0.4.3"
+    "wallpaper": "^4.4.1"
   }
 }

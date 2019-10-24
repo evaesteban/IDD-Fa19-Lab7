@@ -18,7 +18,6 @@ Notes: You will need to specify what port you would like the webapp to be
 served from. You will also need to include the serial port address as a command
 line input.
 */
-
 var express = require('express'); // web server application
 var app = express(); // webapp
 var http = require('http').Server(app); // connects http library to server
@@ -28,6 +27,7 @@ var SerialPort = require('serialport'); // serial library
 var Readline = SerialPort.parsers.Readline; // read serial data as lines
 //-- Addition:
 var NodeWebcam = require( "node-webcam" );// load the webcam module
+const download = require('image-downloader');
 
 //---------------------- WEBAPP SERVER SETUP ---------------------------------//
 // use express to create the simple webapp
@@ -73,8 +73,7 @@ var opts = { //These Options define how the webcam is operated.
 };
 var Webcam = NodeWebcam.create( opts ); //starting up the webcam
 //----------------------------------------------------------------------------//
-
-
+var name;
 
 //---------------------- SERIAL COMMUNICATION (Arduino) ----------------------//
 // start the serial port connection and read on newlines
@@ -83,11 +82,24 @@ const parser = new Readline({
   delimiter: '\r\n'
 });
 
+const animals = require('random-animals-api');
 // Read data that is available on the serial port and send it to the websocket
 serial.pipe(parser);
-parser.on('data', function(data) {
-  console.log('Data:', data);
-  io.emit('server-msg', data);
+
+parser.on('data', function(data) {    
+    
+    // get random cat gif
+    const { getCat } = require('animals-api');
+    getCat('gif')
+    .then((res) => name = res)
+    .catch((error) => console.error(error));
+    //var imageName = new Date().toString().replace(/[&\/\\#,+()$~%.'":*?<>{}\s-]/g, ''); // For video doorbell only
+
+    //Third, the picture is  taken and saved to the `public/`` folder
+    //NodeWebcam.capture('public/'+imageName, opts, function( err, data ) {
+    io.emit('newPicture',(name));
+    //io.emit('newPicture',(imageName+'.jpg')); // For video doorbell only 
+//}); // Fot video doorbell only
 });
 //----------------------------------------------------------------------------//
 
